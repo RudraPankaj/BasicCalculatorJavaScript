@@ -1,0 +1,160 @@
+.mode-toggle {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #e0e0e0;
+  transition: color 0.3s;
+}
+
+.mode-toggle:focus {
+  outline: none;
+}
+
+body.light-mode .mode-toggle {
+  color: #121212;
+}
+
+/*==================================
+    Header Styles
+====================================*/
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.header span {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* Light Mode Styles */
+body.light-mode {
+    background-color: #f4f4f9;
+    color: #121212;
+}
+
+body.light-mode .calculator {
+    background-color: #ffffff;
+}
+
+body.light-mode .display {
+    background-color: #f0f0f0;
+    color: #222;
+}
+
+body.light-mode .btn {
+    background-color: #e0e0e0;
+    color: #121212;
+}
+
+body.light-mode .btn:active {
+    background-color: #d0d0d0;
+}
+
+body.light-mode .operator {
+    background-color: #ffd54f;
+}
+
+body.light-mode .operator:active {
+    background-color: #ffca28;
+}
+
+body.light-mode .clear {
+    background-color: #ff5252;
+}
+
+body.light-mode .clear:active {
+    background-color: #e53935;
+}
+
+body.light-mode .equal {
+    background-color: #4caf50;
+}
+
+body.light-mode .equal:active {
+    background-color: #388e3c;
+}
+
+/*==========================================
+  Dark Mode CSS
+============================================*/
+body {
+  min-height: 100vh;
+  background-color: #121212;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  color: #e0e0e0;
+}
+
+.calculator {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  background-color: #1e1e1e;
+}
+
+.display {
+  background-color: #000;
+  color: #76ff03;
+  font-size: 2rem;
+  text-align: right;
+  padding: 20px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+}
+
+.btn {
+  padding: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: #333;
+  color: #e0e0e0;
+  transition: background-color 0.2s;
+}
+
+.btn:active {
+  background-color: #555;
+}
+
+.operator {
+  background-color: #d67e0a;
+}
+
+.operator:active {
+  background-color: #ff6f00;
+}
+
+.clear {
+  background-color: #d32f2f;
+  color: white;
+}
+
+.clear:active {
+  background-color: #b71c1c;
+}
+
+.equal {
+  grid-column: span 3;
+  background-color: #388e3c;
+  color: white;
+}
+
+.equal:active {
+  background-color: #2e7d32;
+}
