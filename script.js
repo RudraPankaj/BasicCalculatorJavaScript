@@ -1,45 +1,39 @@
 //============//
 // Calculator //
 //============//
-let displayValue = "";
+let displayValue = "0";
 
 function appendValue(value) {
   const display = document.getElementById("display");
 
-  if (displayValue === "0" || displayValue === "Error") {
-    displayValue = value;
+  // If the display is showing "0" or "Error", replace it with the value
+  if (display.value === "0" || display.value === "Error") {
+    display.value = value;
   } else {
-    displayValue += value;
+    // Otherwise, append the value to the current display
+    display.value += value;
   }
-  display.textContent = displayValue;
 }
 
 function clearDisplay() {
   displayValue = "0";
-  document.getElementById("display").textContent = displayValue;
+  document.getElementById("display").value = displayValue;
 }
 
 function calculateResult() {
   const display = document.getElementById("display");
   try {
-    displayValue = eval(displayValue.replace("×", "*").replace("÷", "/")).toString();
-    display.textContent = displayValue;
+    // Evaluate the mathematical expression, replacing symbols for operators
+    display.value = eval(display.value.replace("×", "*").replace("÷", "/"));
   } catch (error) {
-    displayValue = "Error";
-    display.textContent = displayValue;
+    // If there's an error (e.g., invalid expression), show 'Error'
+    display.value = "Error";
   }
 }
 
 function delLast() {
-    const display = document.getElementById("display");
-    displayValue = display.textContent;
-
-    if(displayValue === "0" || displayValue === "") {
-        display.textContent = "0";
-    } else {
-        let newDisplayValue = display.textContent.slice(0, -1);
-        display.textContent = newDisplayValue;
-    }
+  const display = document.getElementById("display");
+  display.value = display.value.slice(0, -1) || "0";
 }
 
 
@@ -53,7 +47,7 @@ modeToggle.addEventListener("click", () => {
   // Toggle the light-mode class
   body.classList.toggle("light-mode");
 
-  // Update the icon
+  // Update the icon based on the mode
   const icon = modeToggle.querySelector("i");
   if (body.classList.contains("light-mode")) {
     icon.classList.replace("ri-sun-line", "ri-moon-fill");
