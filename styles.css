@@ -1,13 +1,13 @@
 textarea {
-    display: block;
-    width: 100%;
-    padding: 2px;/
-    border: 2px solid #ccc;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: normal;
-    resize: none;
-    overflow: hidden;
+  display: block;
+  width: 100%;
+  padding: 2px;
+  border: 2px solid #ccc;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: normal;
+  resize: none;
+  overflow: auto;
 }
 
 .mode-toggle {
@@ -27,9 +27,6 @@ body.light-mode .mode-toggle {
   color: #121212;
 }
 
-/*==================================
-    Header Styles
-====================================*/
 .header {
   display: flex;
   align-items: center;
@@ -42,57 +39,75 @@ body.light-mode .mode-toggle {
   font-weight: bold;
 }
 
-/* Light Mode Styles */
 body.light-mode {
-    background-color: #f4f4f9;
-    color: #121212;
+  background-color: #f4f4f9;
+  color: #121212;
 }
 
 body.light-mode .calculator {
-    background-color: #ffffff;
+  background-color: #ffffff;
 }
 
 body.light-mode .display {
-    background-color: #f0f0f0;
-    color: #222;
+  background-color: #f0f0f0;
+  color: #222;
 }
 
 body.light-mode .btn {
-    background-color: #e0e0e0;
-    color: #121212;
+  background-color: #e0e0e0;
+  color: #121212;
 }
 
 body.light-mode .btn:active {
-    background-color: #d0d0d0;
+  background-color: #d0d0d0;
 }
 
 body.light-mode .operator {
-    background-color: #ffd54f;
+  background-color: #ffd54f;
 }
 
 body.light-mode .operator:active {
-    background-color: #ffca28;
+  background-color: #ffca28;
 }
 
 body.light-mode .clear {
-    background-color: #ff5252;
+  background-color: #ff5252;
 }
 
 body.light-mode .clear:active {
-    background-color: #e53935;
+  background-color: #e53935;
 }
 
 body.light-mode .equal {
-    background-color: #4caf50;
+  background-color: #4caf50;
 }
 
 body.light-mode .equal:active {
-    background-color: #388e3c;
+  background-color: #388e3c;
 }
 
-/*==========================================
-  Dark Mode CSS
-============================================*/
+body.light-mode .contributor_card {
+  background-color: #ffffff;
+  color: #121212;
+}
+
+body.light-mode .contributor_social {
+  color: #999;
+}
+
+body.light-mode .social_link:hover {
+  color: #121212;
+}
+
+body.light-mode .project_details {
+  color: #666;
+}
+
+
+/* ==========================
+    Dark mode styles 
+========================== */
+
 body {
   min-height: 100vh;
   background-color: #121212;
@@ -101,15 +116,75 @@ body {
   color: #e0e0e0;
 }
 
-.calculator {
-  max-width: 70%;
-  text-align: center;
+.calc_container {
+  margin: 20px;
+}
+
+.contributor_card {
   border-radius: 10px;
-  overflow: hidden;
-  border-top: 1px solid #fff700;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   background-color: #1e1e1e;
-  margin: 20px auto;
+  padding: 20px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.contributor_img img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.contributor_info {
+  margin-top: 10px;
+}
+
+.contributor_name {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.contributor_role {
+  font-size: 1em;
+  color: #999;
+}
+
+.contributor_social {
+  margin-top: 10px;
+}
+
+.social_link {
+  text-decoration: none;
+  margin: 0 5px;
+  color: #999;
+  font-size: 1.5em;
+  transition: color 0.3s;
+}
+
+.social_link:hover {
+  color: #fff;
+}
+
+.project_details {
+  margin-top: 15px;
+  font-size: 0.9em;
+  color: #ccc;
+}
+
+.calculator {
+  flex: 1;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  background-color: #1e1e1e;
+  margin: 20px 20px 20px 0;
 }
 
 .display {
@@ -122,11 +197,8 @@ body {
   height: 70px;
   border: none;
   outline: none;
-  appearance: none;
-  display: block;
   box-sizing: border-box;
   overflow-x: auto;
-  border-radius: 0;
 }
 
 .buttons {
@@ -141,7 +213,6 @@ body {
   text-align: center;
   cursor: pointer;
   border: none;
-  outline: none;
   background-color: #333;
   color: #e0e0e0;
   transition: background-color 0.2s;
@@ -176,4 +247,31 @@ body {
 
 .equal:active {
   background-color: #2e7d32;
+}
+
+@media (max-width: 600px) {
+  .calc_container {
+    flex-direction: column;
+  }
+
+  .calculator,
+  .contributor_card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 601px) {
+  .calc_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .calculator {
+    margin-right: 20px;
+  }
+
+  .contributor_card {
+    margin-right: 0;
+  }
 }

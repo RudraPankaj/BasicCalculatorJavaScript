@@ -17,34 +17,64 @@
         </button>
     </section>
 
-    <section class="calculator">
-        <input type="text" class="display" id="display" value="0" />
+    <section class="calc_container">
+
+        <div class="calculator">
+            <input type="text" class="display" id="display" value="0" />
     
-        <div class="buttons">
-            <button class="btn" onclick="appendValue('7')">7</button>
-            <button class="btn" onclick="appendValue('8')">8</button>
-            <button class="btn" onclick="appendValue('9')">9</button>
-            <button class="btn clear" onclick="delLast()">Del</button>
-    
-            <button class="btn" onclick="appendValue('4')">4</button>
-            <button class="btn" onclick="appendValue('5')">5</button>
-            <button class="btn" onclick="appendValue('6')">6</button>
-            <button class="btn operator" onclick="appendValue('/')">÷</button>
-    
-            <button class="btn" onclick="appendValue('1')">1</button>
-            <button class="btn" onclick="appendValue('2')">2</button>
-            <button class="btn" onclick="appendValue('3')">3</button>
-            <button class="btn operator" onclick="appendValue('*')">×</button>
-    
-            <button class="btn" onclick="appendValue('0')">0</button>
-            <button class="btn" onclick="appendValue('.')">.</button>
-            <button class="btn clear" onclick="clearDisplay()">C</button>
-            <button class="btn operator" onclick="appendValue('-')">−</button>
-    
-            <button class="btn equal" onclick="calculateResult()">=</button>
-            <button class="btn operator" onclick="appendValue('+')">+</button>
+            <div class="buttons">
+                <button class="btn" onclick="appendValue('7')">7</button>
+                <button class="btn" onclick="appendValue('8')">8</button>
+                <button class="btn" onclick="appendValue('9')">9</button>
+                <button class="btn clear" onclick="delLast()">Del</button>
+        
+                <button class="btn" onclick="appendValue('4')">4</button>
+                <button class="btn" onclick="appendValue('5')">5</button>
+                <button class="btn" onclick="appendValue('6')">6</button>
+                <button class="btn operator" onclick="appendValue('/')">÷</button>
+        
+                <button class="btn" onclick="appendValue('1')">1</button>
+                <button class="btn" onclick="appendValue('2')">2</button>
+                <button class="btn" onclick="appendValue('3')">3</button>
+                <button class="btn operator" onclick="appendValue('*')">×</button>
+        
+                <button class="btn" onclick="appendValue('0')">0</button>
+                <button class="btn" onclick="appendValue('.')">.</button>
+                <button class="btn clear" onclick="clearDisplay()">C</button>
+                <button class="btn operator" onclick="appendValue('-')">−</button>
+        
+                <button class="btn equal" onclick="calculateResult()">=</button>
+                <button class="btn operator" onclick="appendValue('+')">+</button>
+            </div>
         </div>
-    </section>    
+
+        <div class="contributor_card">
+            <span class="contributor_img">
+                <img src="/images/rudra.png" alt="RudraPankaj" />
+            </span>
+
+            <span class="contributor_info">
+                <span class="contributor_name">Rudra Pankaj</span><br>
+                <span class="contributor_role">Frontend Developer</span>
+            </span>
+
+            <span class="contributor_social">
+                <a href="https://facebook.com/pankajrudra42" target="_blank" class="social_link">
+                    <i class="ri-facebook-fill"></i>
+                </a>
+                <a href="https://x.com/Pankaj55881720" target="_blank" class="social_link">
+                    <i class="ri-twitter-x-fill"></i>
+                </a>
+                <a href="https://linkedin.com/mr-pankaj-rudra" target="_blank" class="social_link">
+                    <i class="ri-linkedin-fill"></i>
+                </a>
+            </span>
+
+            <span class="project_details">
+                <p>It's a basic calculator project built using HTML, CSS, and JavaScript. It can perform basic arithmetic operations like addition, subtraction, multiplication, and division. It also has a dark mode feature. Features like delete last character, clear display, and calculate result are also available. Mannually type the numbers and operators to perform the operations.</p>
+            </span>
+        </div>
+    </section>
 
   <script src="script.js"></script>
 </body>
