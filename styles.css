@@ -102,11 +102,14 @@ body {
 }
 
 .calculator {
-  width: 100%;
+  max-width: 70%;
+  text-align: center;
   border-radius: 10px;
   overflow: hidden;
+  border-top: 1px solid #fff700;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   background-color: #1e1e1e;
+  margin: 20px auto;
 }
 
 .display {
